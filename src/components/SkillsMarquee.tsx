@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import { Blocks, Bot, Braces, ListOrdered, Pause, Play, Webhook, Workflow } from 'lucide-react'
+import { Blocks, Bot, Braces, ListOrdered, Webhook, Workflow } from 'lucide-react'
 import { skills, type Locale } from '../data/content'
 
 const logos: Record<string, string> = {
