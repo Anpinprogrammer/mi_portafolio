@@ -4,12 +4,18 @@ export default {
   theme: {
     extend: {
       keyframes: {
-        'terminal-float': {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-8px)' },
+        'terminal-bounce': {
+          '0%, 100%': {
+            transform: 'translate3d(0, -25%, 0)',
+            animationTimingFunction: 'cubic-bezier(0.8,0,1,1)',
+          },
+          '50%': {
+            transform: 'translate3d(0, 0, 0)',
+            animationTimingFunction: 'cubic-bezier(0,0,0.2,1)',
+          },
         },
       },
-      animation: { 'terminal-float': 'terminal-float 5s ease-in-out infinite' },
+      animation: { 'terminal-bounce': 'terminal-bounce 1s infinite' },
       colors: {
         canvas: '#090D16',
         surface: '#101725',

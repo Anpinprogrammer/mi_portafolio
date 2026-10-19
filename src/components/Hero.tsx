@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react'
-import { motion, useReducedMotion } from 'framer-motion'
+import { m as motion, useReducedMotion } from 'framer-motion'
 import { ArrowRight, ArrowUpRight, Code2, Sparkles, Terminal, Workflow } from 'lucide-react'
 import { copy, type Locale } from '../data/content'
 import type { SectionId } from '../data/sections'
@@ -49,7 +49,7 @@ export function Hero({ locale, onNavigate }: HeroProps) {
       <div className="container-site relative grid w-full items-center gap-0 lg:grid-cols-[1.12fr_.88fr]">
         <div className="relative z-20 order-1 md:pt-10 lg:col-start-1 lg:row-start-1 lg:self-end lg:pt-28">
           <motion.div
-            initial={reduceMotion ? false : { opacity: 0, y: 20 }}
+            initial={reduceMotion ? false : { y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="mb-4 inline-flex items-center gap-2.5 rounded-full border border-emerald-300/20 bg-emerald-500/[.07] px-4 py-2 text-[11px] font-semibold text-emerald-300 md:mb-8"
@@ -60,7 +60,7 @@ export function Hero({ locale, onNavigate }: HeroProps) {
           </motion.div>
 
           <motion.div
-            initial={reduceMotion ? false : { opacity: 0, y: 20 }}
+            initial={reduceMotion ? false : { y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.12, duration: 0.65 }}
           >
@@ -78,7 +78,7 @@ export function Hero({ locale, onNavigate }: HeroProps) {
 
         <div className="relative z-20 order-3 pb-5 lg:col-start-1 lg:row-start-2 lg:self-start lg:pb-28">
           <motion.p
-            initial={reduceMotion ? false : { opacity: 0, y: 20 }}
+            initial={reduceMotion ? false : { y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.12, duration: 0.65 }}
             className="mx-auto mt-7 max-w-xl text-center text-base leading-[1.9] text-slate-400 sm:text-lg md:mx-0 md:mt-7 md:text-left"
@@ -138,7 +138,7 @@ export function Hero({ locale, onNavigate }: HeroProps) {
         </div>
 
         <motion.div
-          initial={reduceMotion ? false : { opacity: 0, scale: 0.94, x: 40 }}
+          initial={reduceMotion ? false : { scale: 0.94, x: 40 }}
           animate={{ opacity: 1, scale: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.18 }}
           className="relative order-2 mx-auto mt-2 h-[300px] w-full max-w-[580px] self-end md:mt-8 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mt-0 lg:h-[570px] lg:max-w-none lg:self-center xl:h-[700px]"
@@ -201,7 +201,12 @@ export function Hero({ locale, onNavigate }: HeroProps) {
               </g>
             </svg>
             <img
-              src="/assets/hero.png"
+              src="/assets/hero-800.webp"
+              srcSet="/assets/hero-480.webp 480w, /assets/hero-800.webp 800w, /assets/hero-1254.webp 1254w"
+              sizes="(max-width: 639px) 78vw, (max-width: 1023px) 450px, 500px"
+              width={1254}
+              height={1254}
+              decoding="async"
               alt="Andrés Pineda, software engineer working with a laptop"
               fetchPriority="high"
               className="hero-portrait"
@@ -221,8 +226,14 @@ export function Hero({ locale, onNavigate }: HeroProps) {
                   } as CSSProperties
                 }
               >
-                <span className="pointer-events-none absolute inset-0 rounded-full border border-[var(--technology-glow)] opacity-30 motion-safe:animate-ping motion-safe:[animation-duration:3s] motion-reduce:hidden" />
-                <img src={`/assets/logos/${name}.svg`} alt="" width={28} height={28} />
+                <span className="pointer-events-none absolute inset-0 rounded-full border border-[var(--technology-glow)] opacity-30 motion-safe:animate-ping motion-safe:will-change-transform motion-safe:[animation-duration:3s] motion-reduce:hidden" />
+                <img
+                  src={`/assets/logos/${name}.svg`}
+                  alt=""
+                  decoding="async"
+                  width={28}
+                  height={28}
+                />
               </div>
             ))}
           </div>

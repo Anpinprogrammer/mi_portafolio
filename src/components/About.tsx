@@ -22,7 +22,7 @@ export function About({ locale }: AboutProps) {
     'flex min-w-0 items-center gap-3 rounded-2xl border border-white/15 bg-[#131B2E]/90 px-4 py-3 text-sm leading-relaxed text-white backdrop-blur-xl'
 
   return (
-    <section id="about" className="relative pb-12 md:pb-24 pt-12 md:py-20 lg:py-24">
+    <section id="about" className="relative pb-12 pt-12 md:py-20 md:pb-24 lg:py-24">
       <SectionDivider />
       <div className="container-site grid items-start gap-7 lg:max-w-[1200px] lg:grid-cols-[.85fr_1.15fr] lg:gap-x-16 lg:gap-y-6 xl:gap-x-24">
         <div className="order-1 lg:col-start-2 lg:row-start-1 lg:self-end">
@@ -42,7 +42,7 @@ export function About({ locale }: AboutProps) {
                 className="pointer-events-none absolute inset-x-0 bottom-0 top-[16%] z-[1] rounded-full bg-[radial-gradient(ellipse_at_30%_35%,rgba(0,229,245,0.22),transparent_65%),radial-gradient(ellipse_at_75%_65%,rgba(139,92,246,0.28),transparent_65%)] blur-3xl"
               />
               <div
-                className="pointer-events-none absolute right-3 top-1 z-[3] hidden w-[216px] max-w-[calc(100%-24px)] rounded-xl border border-white/15 bg-slate-900/75 shadow-[0_16px_35px_rgba(0,0,0,0.25),0_0_25px_rgba(0,229,245,0.07)] backdrop-blur-md motion-safe:animate-bounce md:w-64 lg:-left-20 lg:right-auto lg:block xl:-left-36"
+                className="pointer-events-none absolute right-3 top-1 z-[3] hidden w-[216px] max-w-[calc(100%-24px)] rounded-xl border border-white/15 bg-slate-900/75 shadow-[0_16px_35px_rgba(0,0,0,0.25),0_0_25px_rgba(0,229,245,0.07)] backdrop-blur-md motion-safe:animate-terminal-bounce md:w-64 lg:-left-20 lg:right-auto lg:block motion-safe:lg:will-change-transform xl:-left-36"
                 aria-hidden="true"
               >
                 <div className="flex items-center gap-1.5 border-b border-white/10 px-3 py-2">
@@ -66,7 +66,12 @@ export function About({ locale }: AboutProps) {
                 </pre>
               </div>
               <img
-                src="/assets/about.png"
+                src="/assets/about-800.webp"
+                srcSet="/assets/about-480.webp 480w, /assets/about-800.webp 800w, /assets/about-1141.webp 1141w"
+                sizes="(max-width: 639px) calc(100vw - 32px), 390px"
+                width={1141}
+                height={1379}
+                decoding="async"
                 alt={locale === 'es' ? 'Fotografía de Andrés Pineda' : 'Photo of Andrés Pineda'}
                 loading="lazy"
                 className="relative z-[2] mx-auto block h-auto w-full max-w-md object-contain [-webkit-mask-image:linear-gradient(to_bottom,black_78%,transparent_100%)] [mask-image:linear-gradient(to_bottom,black_78%,transparent_100%)]"

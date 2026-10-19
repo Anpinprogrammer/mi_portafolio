@@ -1,6 +1,6 @@
 import { ArrowUpRight, Github } from 'lucide-react'
 import { copy, type Locale, type Project } from '../data/content'
-import Preview from './Previews'
+import { ProjectPreview } from './ProjectPreview'
 import { Reveal } from './Reveal'
 
 type ProjectCardProps = {
@@ -30,7 +30,7 @@ export function ProjectCard({ project, locale, wide = false }: ProjectCardProps)
               : 'h-[210px] sm:h-auto sm:min-h-[300px] lg:h-[210px] lg:min-h-0'
           }`}
         >
-          <Preview type={project.type} />
+          <ProjectPreview type={project.type} />
           <div className="absolute bottom-4 left-4 z-10 rounded-full border border-white/20 bg-[#080e19]/70 px-3 py-1.5 font-mono text-[10px] tracking-widest text-slate-300 backdrop-blur-xl">
             FEATURED / {project.feature}
           </div>

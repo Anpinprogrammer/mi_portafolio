@@ -1,4 +1,4 @@
-import { motion, useReducedMotion } from 'framer-motion'
+import { m as motion, useReducedMotion } from 'framer-motion'
 import type { PropsWithChildren } from 'react'
 
 type RevealProps = PropsWithChildren<{

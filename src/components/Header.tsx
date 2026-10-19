@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, m as motion } from 'framer-motion'
 import { ArrowUpRight, ChevronDown, Globe2, Menu, X } from 'lucide-react'
 import { copy, type Locale } from '../data/content'
 import { sectionIds, type SectionId } from '../data/sections'
@@ -41,7 +41,7 @@ export function Header({
           onClick={() => navigate('home')}
           className="z-10 flex items-center gap-2.5 rounded-2xl border border-white/10 bg-[#101725]/85 px-3.5 py-2.5 backdrop-blur-xl sm:px-4"
         >
-          <span className="font-display text-sm md:text-xl font-bold tracking-tighter">
+          <span className="font-display text-sm font-bold tracking-tighter md:text-xl">
             AP<span className="text-cyan">.</span>
           </span>
           <span className="border-l border-white/20 pl-2.5 text-[10px] font-semibold uppercase tracking-[.2em] text-slate-300 sm:block">
