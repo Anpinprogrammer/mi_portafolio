@@ -50,7 +50,7 @@ export function SkillsMarquee({ locale }: { locale: Locale }) {
       >
         <div
           className="flex w-max animate-skills-marquee will-change-transform [animation-duration:28s!important]"
-          style={{ animationPlayState: paused ? 'paused' : 'running' }}
+          style={{ animationPlayState: 'running' }}
         >
           {[0, 1].map((copy) => (
             <ul
