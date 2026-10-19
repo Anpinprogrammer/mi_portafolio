@@ -39,7 +39,7 @@ const tools = [
 ]
 
 export function SkillsMarquee({ locale }: { locale: Locale }) {
-  const [paused, setPaused] = useState(false)
+  //const [paused, setPaused] = useState(false)
   return (
     <div className="relative w-full min-w-0 pb-0 md:pb-8 lg:self-center lg:pb-0">
       <div
