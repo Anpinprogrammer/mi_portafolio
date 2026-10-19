@@ -3,6 +3,7 @@ import { ArrowUpRight, BriefcaseBusiness, Code2, Terminal, Workflow } from 'luci
 import { copy, skills, type Locale } from '../data/content'
 import { Reveal } from './Reveal'
 import { SectionTitle } from './SectionTitle'
+import { SkillsMarquee } from './SkillsMarquee'
 
 const skillIcons = [Code2, Terminal, BriefcaseBusiness, Workflow] as const
 
@@ -17,12 +18,16 @@ export function Skills({ locale }: SkillsProps) {
     <section id="skills" className="skills-background relative isolate py-12 md:py-24">
       <SectionDivider />
       <div className="container-site relative">
-        <SectionTitle
-          eyebrow={t.skillsEyebrow}
-          title={t.skillsTitle}
-          emphasis={t.skillsTitle2}
-          intro={t.skillsIntro}
-        />
+        <div className="mb-8 grid min-w-0 items-center gap-6 lg:mb-12 lg:grid-cols-2 lg:gap-12">
+          <SectionTitle
+            eyebrow={t.skillsEyebrow}
+            title={t.skillsTitle}
+            emphasis={t.skillsTitle2}
+            intro={t.skillsIntro}
+            spacing="none"
+          />
+          <SkillsMarquee locale={locale} />
+        </div>
 
         <div
           role="region"
@@ -66,7 +71,9 @@ export function Skills({ locale }: SkillsProps) {
             href="#projects"
             className="inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-xl border border-cyan/40 bg-cyan/10 px-6 py-3 text-sm font-bold text-cyan shadow-[0_0_20px_rgba(0,229,245,0.08)] transition-colors hover:border-cyan/70 hover:bg-cyan/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan md:w-auto"
           >
-            {locale === 'es' ? 'Ver estas tecnologías en acción' : 'See these technologies in action'}
+            {locale === 'es'
+              ? 'Ver estas tecnologías en acción'
+              : 'See these technologies in action'}
             <ArrowUpRight size={18} aria-hidden="true" />
           </a>
         </Reveal>

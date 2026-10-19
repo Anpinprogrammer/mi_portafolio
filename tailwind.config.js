@@ -4,6 +4,10 @@ export default {
   theme: {
     extend: {
       keyframes: {
+        'skills-marquee': {
+          from: { transform: 'translate3d(0, 0, 0)' },
+          to: { transform: 'translate3d(-50%, 0, 0)' },
+        },
         'terminal-bounce': {
           '0%, 100%': {
             transform: 'translate3d(0, -25%, 0)',
@@ -15,7 +19,10 @@ export default {
           },
         },
       },
-      animation: { 'terminal-bounce': 'terminal-bounce 1s infinite' },
+      animation: {
+        'terminal-bounce': 'terminal-bounce 1s infinite',
+        'skills-marquee': 'skills-marquee 28s linear infinite',
+      },
       colors: {
         canvas: '#090D16',
         surface: '#101725',
