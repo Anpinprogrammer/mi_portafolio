@@ -112,7 +112,7 @@ export function About({ locale }: AboutProps) {
             <a
               href={resumeHref}
               download
-              className="mt-7 inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-xl border border-cyan/40 bg-cyan/10 px-6 py-3 text-sm font-bold text-cyan shadow-[0_0_20px_rgba(0,229,245,0.08)] transition-colors hover:border-cyan/70 hover:bg-cyan/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan md:w-auto"
+              className="mt-7 inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-xl border border-cyan/40 bg-cyan/10 px-6 py-3 text-sm font-bold text-cyan shadow-[0_0_20px_rgba(0,229,245,0.08)] transition-colors hover:border-cyan/70 hover:bg-cyan/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan md:w-auto lg:mx-auto lg:flex lg:w-[340px] lg:max-w-full"
             >
               <Download size={17} />
               {t.cv}
